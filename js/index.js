@@ -35,8 +35,24 @@ Array.from(images).forEach(element => {
 
 document.addEventListener('keydown', event => {
     if ( event.key === "Escape" ) {
-        
         document.querySelector('.popup').remove()
         body.hidden = false;
     }
 })
+
+let hOne = document.querySelector('h1');
+
+window.addEventListener('load', event => {
+    console.log('hello? I loaded');
+    setInterval( () => {
+        hOne.classList.toggle('headercolor');
+      }, 1000)
+})
+
+const pTags = document.querySelectorAll('p');
+
+// Array.from(pTags).forEach(element => {
+//     element.addEventListener('click', event => {
+//         element
+//     })
+// })
