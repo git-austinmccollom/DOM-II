@@ -2,6 +2,7 @@
 const navNodes = document.querySelectorAll('a');
 const containerHome = document.querySelector('.container.home');
 const body = document.querySelector('body');
+const html =document.querySelector('html');
 
 // navNodes.addEventListener('mouseover', event => {
 //     console.log('hello world');
@@ -21,8 +22,21 @@ const images = document.querySelectorAll('img');
 Array.from(images).forEach(element => {
     element.addEventListener('dblclick', event => {
         console.log('hello?');
+
+        let source = element.src;
+
         let newDiv = document.createElement('div');
-        newDiv.style.cssText = "width: 75%; height: 600px; background-color: red; margin: auto;"
-        body.insertBefore(newDiv, containerHome);
+        newDiv.style.cssText = `width: 100%; height: 600px; background-image: url("${source}"); background-repeat: no-repeat; background-contain: cover; background-position: center; margin: auto;`
+        newDiv.classList.add('popup');
+        html.prepend(newDiv, body);
+        body.hidden = true;
     })
+})
+
+document.addEventListener('keydown', event => {
+    if ( event.key === "Escape" ) {
+        
+        document.querySelector('.popup').remove()
+        body.hidden = false;
+    }
 })
