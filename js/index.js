@@ -56,3 +56,7 @@ Array.from(pTags).forEach(element => {
         element.classList.toggle('highlight');
     })
 })
+
+window.addEventListener('resize', event => {
+    containerHome.style.backgroundColor = "magenta";
+})
