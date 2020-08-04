@@ -2,7 +2,9 @@
 const navNodes = document.querySelectorAll('a');
 const containerHome = document.querySelector('.container.home');
 const body = document.querySelector('body');
-const html =document.querySelector('html');
+const html = document.querySelector('html');
+const nav = document.querySelector('nav');
+const header = document.querySelector('header');
 
 // navNodes.addEventListener('mouseover', event => {
 //     console.log('hello world');
@@ -59,4 +61,11 @@ Array.from(pTags).forEach(element => {
 
 window.addEventListener('resize', event => {
     containerHome.style.backgroundColor = "magenta";
+})
+
+window.addEventListener('scroll', event => {
+    header.style.backgroundColor = "blue";
+    if ( window.scrollY === 0 ) {
+        header.style.backgroundColor = "white";
+    }
 })
