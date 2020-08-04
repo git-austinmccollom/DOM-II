@@ -5,6 +5,8 @@ const body = document.querySelector('body');
 const html = document.querySelector('html');
 const nav = document.querySelector('nav');
 const header = document.querySelector('header');
+const footer = document.querySelector('footer');
+const copyright = footer.querySelector('p');
 
 // navNodes.addEventListener('mouseover', event => {
 //     console.log('hello world');
@@ -68,4 +70,20 @@ window.addEventListener('scroll', event => {
     if ( window.scrollY === 0 ) {
         header.style.backgroundColor = "white";
     }
+})
+
+copyright.addEventListener('select', event => {
+    copyright.hidden = true;
+    console.log('footer');
+})
+
+footer.addEventListener('contextmenu', event => {
+    footer.style.backgroundColor = 'pink';
+})
+
+document.addEventListener('keypress', event => {
+    console.log(event);
+    let key = document.createElement('p');
+    key.textContent = event.key;
+    containerHome.appendChild(key);
 })
