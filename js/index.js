@@ -51,8 +51,8 @@ window.addEventListener('load', event => {
 
 const pTags = document.querySelectorAll('p');
 
-// Array.from(pTags).forEach(element => {
-//     element.addEventListener('click', event => {
-//         element
-//     })
-// })
+Array.from(pTags).forEach(element => {
+    element.addEventListener('click', event => {
+        element.classList.toggle('highlight');
+    })
+})
