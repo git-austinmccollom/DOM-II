@@ -60,7 +60,17 @@ const pTags = document.querySelectorAll('p');
 
 Array.from(pTags).forEach(element => {
     element.addEventListener('click', event => {
+        event.stopPropagation();
         element.classList.toggle('highlight');
+    })
+})
+
+const destinations = containerHome.querySelectorAll('.destination');
+
+Array.from(destinations).forEach(element => {
+    element.addEventListener('click', event => {
+        // event.stopPropogation();
+        element.classList.toggle('highlightdestination');
     })
 })
 
