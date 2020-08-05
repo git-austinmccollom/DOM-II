@@ -19,6 +19,9 @@ Array.from(navNodes).forEach(element => {
     element.addEventListener('mouseleave', event => {
         element.style.backgroundColor = 'white';
     })
+    element.addEventListener('click', event => {
+        event.preventDefault();
+    })
 })
 
 const images = document.querySelectorAll('img');
@@ -70,11 +73,6 @@ window.addEventListener('scroll', event => {
     if ( window.scrollY === 0 ) {
         header.style.backgroundColor = "white";
     }
-})
-
-copyright.addEventListener('select', event => {
-    copyright.hidden = true;
-    console.log('footer');
 })
 
 footer.addEventListener('contextmenu', event => {
